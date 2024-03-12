@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div>
+      <nav class="bg-[#6200E9] text-white p-2">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2 flex-grow">
+            <img src="../assets/icons/menu-cheesesburger.svg" alt="" />
+            <h1 class="text-lg">My To-Do Tasks</h1>
+          </div>
+          <div class="flex items-center gap-4">
+            <div>
+              <form>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-2">
+                    <img
+                      src="../assets/icons/search.svg"
+                      alt="magnifier-image"
+                    />
+                  </div>
+                  <input
+                    type="search"
+                    class="block w-full p-1 ps-10 text-sm rounded-sm bg-[#7927ED]"
+                    placeholder="Search"
+                    required
+                  />
+                </div>
+              </form>
+            </div>
+            <div>
+              <img src="../assets/icons/filter.svg" alt="filter" />
+            </div>
+            <div class="pr-2">
+              <img src="../assets/icons/add-box.svg" alt="add-box" />
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main></main>
+      <footer></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
