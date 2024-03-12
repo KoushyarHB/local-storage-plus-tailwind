@@ -1,0 +1,14 @@
+{
+  "name": "hw10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tailwind-start":"npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "Koushyar Heidari Bateni",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
