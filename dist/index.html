@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <div>
+    <div class="min-h-screen">
       <nav class="bg-[#6200E9] text-white p-2">
         <div class="flex justify-between items-center">
           <div class="flex items-center gap-2 flex-grow">
@@ -19,7 +19,9 @@
             <div>
               <form>
                 <div class="relative">
-                  <div class="absolute inset-y-0 left-0 flex items-center pl-2">
+                  <div
+                    class="absolute inset-y-0 left-0 flex items-center pl-2 cursor-pointer"
+                  >
                     <img
                       src="../assets/icons/search.svg"
                       alt="magnifier-image"
@@ -34,17 +36,58 @@
                 </div>
               </form>
             </div>
-            <div>
+            <div class="cursor-pointer">
               <img src="../assets/icons/filter.svg" alt="filter" />
             </div>
-            <div class="pr-2">
+            <div class="cursor-pointer pr-2">
               <img src="../assets/icons/add-box.svg" alt="add-box" />
             </div>
           </div>
         </div>
       </nav>
-      <main></main>
-      <footer></footer>
+      <main>
+        <table class="w-full">
+          <thead>
+            <th class="header-cell !text-left">Task Name</th>
+            <th class="header-cell">Priority</th>
+            <th class="header-cell">Status</th>
+            <th class="header-cell">Deadline</th>
+            <th class="header-cell">Actions</th>
+          </thead>
+          <tbody>
+            <td class="body-cell"></td>
+            <td class="body-cell"></td>
+            <td class="body-cell"></td>
+            <td class="body-cell">
+              <p class="date">۱۴۰۱/۱۱/۱۴</p>
+            </td>
+            <td class="body-cell">
+              <div class="flex gap-1 justify-center">
+                <img
+                  class="delete-btn"
+                  src="../assets/icons/delete.svg"
+                  alt="delete"
+                />
+                <img
+                  class="edit-btn"
+                  src="../assets/icons/edit.svg"
+                  alt="edit"
+                />
+                <img
+                  class="show-btn"
+                  src="../assets/icons/show.svg"
+                  alt="show"
+                />
+              </div>
+            </td>
+          </tbody>
+        </table>
+      </main>
+      <footer
+        class="fixed bottom-0 w-full bg-[#6200E9] text-white text-center text-sm p-1"
+      >
+        <p>Author: Koushyar</p>
+      </footer>
     </div>
     <script src="script.js"></script>
   </body>

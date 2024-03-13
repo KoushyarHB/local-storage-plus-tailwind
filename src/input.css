@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-cell {
+  @apply text-center font-bold text-sm p-4 opacity-80 border;
+}
+
+.body-cell {
+  @apply text-center font-bold text-sm p-4 border;
+}
+
+.task-name {
+  @apply opacity-60 !text-left;
+}
+
+.medium-priority {
+  @apply inline-flex items-center bg-yellow-500 rounded-2xl p-2;
+}
+
+.low-priority {
+  @apply inline-flex items-center bg-gray-300 rounded-2xl p-2;
+}
+
+.high-priority {
+  @apply inline-flex items-center bg-red-600 text-white rounded-2xl p-2;
+}
+
+.todo-status {
+  @apply inline-flex items-center bg-red-600 text-white rounded-2xl p-2;
+}
+
+.doing-status {
+  @apply inline-flex items-center bg-yellow-500 rounded-2xl p-2;
+}
+
+.done-status {
+  @apply inline-flex items-center bg-green-700 text-white rounded-2xl p-2;
+}
+
+.date {
+  @apply inline-flex border border-blue-500 rounded-2xl p-2;
+}
+
+.delete-btn {
+  @apply bg-red-600 p-1 rounded-sm cursor-pointer;
+}
+
+.edit-btn {
+  @apply bg-blue-600 p-1 rounded-sm cursor-pointer;
+}
+
+.show-btn {
+  @apply bg-gray-600 p-1 rounded-sm cursor-pointer;
+}
