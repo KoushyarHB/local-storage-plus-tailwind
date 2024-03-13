@@ -53,3 +53,7 @@
 .show-btn {
   @apply bg-gray-600 p-1 rounded-sm cursor-pointer;
 }
+
+.modal {
+  @apply bg-gray-900 bg-opacity-20 fixed inset-0 flex items-center justify-center;
+}

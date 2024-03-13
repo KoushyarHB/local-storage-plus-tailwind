@@ -39,7 +39,7 @@
             <div class="cursor-pointer">
               <img src="../assets/icons/filter.svg" alt="filter" />
             </div>
-            <div class="cursor-pointer pr-2">
+            <div id="add-task" class="cursor-pointer pr-2">
               <img src="../assets/icons/add-box.svg" alt="add-box" />
             </div>
           </div>
@@ -55,7 +55,7 @@
             <th class="header-cell">Actions</th>
           </thead>
           <tbody>
-            <td class="body-cell"></td>
+            <!-- <td class="body-cell"></td>
             <td class="body-cell"></td>
             <td class="body-cell"></td>
             <td class="body-cell">
@@ -79,9 +79,79 @@
                   alt="show"
                 />
               </div>
-            </td>
+            </td> -->
           </tbody>
         </table>
+        <div class="overlay hidden">
+          <div class="modal">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-2/5">
+              <div class="flex justify-end">
+                <button
+                  id="closeModal"
+                  class="text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="mt-4">
+                <form action="">
+                  <div>
+                    <label for="">Task Name:</label>
+                    <input
+                      class="w-full shadow-sm rounded-md p-2 my-2 border"
+                      type="text"
+                      name="task-name"
+                      id=""
+                      placeholder="Describe your task"
+                    />
+                  </div>
+                  <div class="flex justify-between py-2">
+                    <label for="">Priority:</label>
+                    <select name="" id="">
+                      <option value="">Low</option>
+                      <option value="">Medium</option>
+                      <option value="">High</option>
+                    </select>
+                  </div>
+                  <div class="flex justify-between py-2">
+                    <label for="">Status:</label>
+                    <select name="" id="">
+                      <option value="">Todo</option>
+                      <option value="">Doing</option>
+                      <option value="">Done</option>
+                    </select>
+                  </div>
+                  <div class="flex justify-between py-2">
+                    <label for="">Deadline:</label>
+                    <input type="date" />
+                  </div>
+                  <div class="text-center mt-4">
+                    <button
+                      onclick="event.preventDefault(); event.stopPropagation();"
+                      class="bg-blue-400 text-white w-1/2 p-2 px-4 rounded-md"
+                      type="submit"
+                    >
+                      Add Task
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <footer
         class="fixed bottom-0 w-full bg-[#6200E9] text-white text-center text-sm p-1"
