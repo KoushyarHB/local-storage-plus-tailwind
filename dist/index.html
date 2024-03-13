@@ -54,37 +54,7 @@
             <th class="header-cell">Deadline</th>
             <th class="header-cell">Actions</th>
           </thead>
-          <tbody>
-            <td class="body-cell">
-              <p class="task-name">walk the dog</p>
-            </td>
-            <td class="body-cell">
-              <p class="medium-priority">medium</p>
-            </td>
-            <td class="body-cell"></td>
-            <td class="body-cell">
-              <p class="date">۱۴۰۱/۱۱/۱۴</p>
-            </td>
-            <td class="body-cell">
-              <div class="flex gap-1 justify-center">
-                <img
-                  class="delete-btn"
-                  src="../assets/icons/delete.svg"
-                  alt="delete"
-                />
-                <img
-                  class="edit-btn"
-                  src="../assets/icons/edit.svg"
-                  alt="edit"
-                />
-                <img
-                  class="show-btn"
-                  src="../assets/icons/show.svg"
-                  alt="show"
-                />
-              </div>
-            </td>
-          </tbody>
+          <tbody></tbody>
         </table>
         <div class="overlay hidden">
           <div class="modal">
@@ -113,17 +83,16 @@
               <div class="mt-4">
                 <form id="modal-form" action="">
                   <div>
-                    <label for="">Task Name:</label>
+                    <label>Task Name:</label>
                     <input
                       class="w-full shadow-sm rounded-md p-2 my-2 border"
                       type="text"
                       name="taskName"
-                      id=""
                       placeholder="Describe your task"
                     />
                   </div>
                   <div class="flex justify-between py-2">
-                    <label for="">Priority:</label>
+                    <label>Priority:</label>
                     <select name="priority">
                       <option value="low">Low</option>
                       <option value="medium">Medium</option>
@@ -131,7 +100,7 @@
                     </select>
                   </div>
                   <div class="flex justify-between py-2">
-                    <label for="">Status:</label>
+                    <label>Status:</label>
                     <select name="status">
                       <option value="todo">Todo</option>
                       <option value="doing">Doing</option>
@@ -142,7 +111,7 @@
                     <label for="">Deadline:</label>
                     <input type="date" name="date" />
                   </div>
-                  <div class="text-center mt-4">
+                  <div class="modal-btn text-center mt-4">
                     <button
                       class="bg-blue-400 text-white w-1/2 p-2 px-4 rounded-md"
                       type="submit"
