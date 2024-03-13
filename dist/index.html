@@ -46,7 +46,7 @@
         </div>
       </nav>
       <main>
-        <table class="w-full">
+        <table id="tasks-table" class="w-full">
           <thead>
             <th class="header-cell !text-left">Task Name</th>
             <th class="header-cell">Priority</th>
@@ -55,8 +55,12 @@
             <th class="header-cell">Actions</th>
           </thead>
           <tbody>
-            <!-- <td class="body-cell"></td>
-            <td class="body-cell"></td>
+            <td class="body-cell">
+              <p class="task-name">walk the dog</p>
+            </td>
+            <td class="body-cell">
+              <p class="medium-priority">medium</p>
+            </td>
             <td class="body-cell"></td>
             <td class="body-cell">
               <p class="date">۱۴۰۱/۱۱/۱۴</p>
@@ -79,7 +83,7 @@
                   alt="show"
                 />
               </div>
-            </td> -->
+            </td>
           </tbody>
         </table>
         <div class="overlay hidden">
@@ -107,40 +111,39 @@
                 </button>
               </div>
               <div class="mt-4">
-                <form action="">
+                <form id="modal-form" action="">
                   <div>
                     <label for="">Task Name:</label>
                     <input
                       class="w-full shadow-sm rounded-md p-2 my-2 border"
                       type="text"
-                      name="task-name"
+                      name="taskName"
                       id=""
                       placeholder="Describe your task"
                     />
                   </div>
                   <div class="flex justify-between py-2">
                     <label for="">Priority:</label>
-                    <select name="" id="">
-                      <option value="">Low</option>
-                      <option value="">Medium</option>
-                      <option value="">High</option>
+                    <select name="priority">
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                      <option value="high">High</option>
                     </select>
                   </div>
                   <div class="flex justify-between py-2">
                     <label for="">Status:</label>
-                    <select name="" id="">
-                      <option value="">Todo</option>
-                      <option value="">Doing</option>
-                      <option value="">Done</option>
+                    <select name="status">
+                      <option value="todo">Todo</option>
+                      <option value="doing">Doing</option>
+                      <option value="done">Done</option>
                     </select>
                   </div>
                   <div class="flex justify-between py-2">
                     <label for="">Deadline:</label>
-                    <input type="date" />
+                    <input type="date" name="date" />
                   </div>
                   <div class="text-center mt-4">
                     <button
-                      onclick="event.preventDefault(); event.stopPropagation();"
                       class="bg-blue-400 text-white w-1/2 p-2 px-4 rounded-md"
                       type="submit"
                     >
