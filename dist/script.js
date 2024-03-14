@@ -1,11 +1,14 @@
 let tasksArr = [];
 let editFlag = 0;
+let showFlag = 0;
 let idOftaskBeingEdited;
 const addTaskBtn = document.getElementById("add-task");
 const overLay = document.querySelector(".overlay");
 addTaskBtn.addEventListener("click", addTask);
 
 function addTask() {
+  const modalForm = document.getElementById("modal-form");
+  modalForm.reset();
   const modalBtnDiv = overLay.querySelector(".modal-btn");
   modalBtnDiv.classList.remove("hidden");
   const modalBtn = modalBtnDiv.querySelector("button");
@@ -19,18 +22,18 @@ function showModal() {
 
 const closeModalBtn = document.getElementById("closeModal");
 closeModalBtn.addEventListener("click", hideModal);
-function hideModal() {
+function hideModal(e) {
   overLay.classList.add("hidden");
 }
 
-const modalFrom = document.getElementById("modal-form");
-modalFrom.addEventListener("submit", handleModalForm);
+const modalForm = document.getElementById("modal-form");
+modalForm.addEventListener("submit", handleModalForm);
 let counter = 0;
 
 function handleModalForm(e) {
   e.preventDefault();
   const { taskName, priority, status, date } = e.target;
-  if (editFlag === 0) {
+  if (editFlag === 0 && showFlag === 0) {
     let task = {
       name: taskName.value,
       priority: priority.value,
@@ -40,7 +43,7 @@ function handleModalForm(e) {
     };
     counter++;
     tasksArr.push(task);
-  } else {
+  } else if (showFlag === 0) {
     tasksArr.forEach((task) => {
       if (task.id === idOftaskBeingEdited) {
         task.name = taskName.value;
@@ -50,9 +53,12 @@ function handleModalForm(e) {
       }
       editFlag = 0;
     });
+  } else {
+    showFlag = 0;
   }
-  renderTasks(tasksArr);
   e.target.reset();
+  hideModal();
+  renderTasks(tasksArr);
 }
 
 function renderTasks(arr) {
@@ -134,6 +140,7 @@ function handleDelete(e) {
 }
 
 function handleShow(e) {
+  showFlag = 1;
   auxiliaty(e);
   const modalBtnDiv = overLay.querySelector(".modal-btn");
   modalBtnDiv.classList.add("hidden");
