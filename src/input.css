@@ -7,11 +7,12 @@
 }
 
 .body-cell {
-  @apply text-center font-bold text-sm p-4 border;
+  @apply text-center font-bold text-sm p-4 border max-w-sm;
 }
 
 .task-name {
-  @apply opacity-60 !text-left;
+  @apply opacity-60 !text-left max-w-sm;
+  word-wrap: break-word;
 }
 
 .medium-priority {
