@@ -1,4 +1,5 @@
-let tasksArr = [];
+let tasksArr = JSON.parse(localStorage.getItem("key")) || [];
+renderTasks(tasksArr);
 let editFlag = 0;
 let showFlag = 0;
 let idOftaskBeingEdited;
@@ -62,6 +63,7 @@ function handleModalForm(e) {
 }
 
 function renderTasks(arr) {
+  localStorage.setItem("key", JSON.stringify(arr));
   const tasksTable = document.getElementById("tasks-table");
   const tasksTableBody = tasksTable.querySelector("tbody");
   tasksTableBody.innerHTML = "";
@@ -136,7 +138,7 @@ function renderTasks(arr) {
 function handleDelete(e) {
   const taskId = e.target.parentElement.parentElement.parentElement.id;
   tasksArr = tasksArr.filter((task) => String(task.id) !== taskId);
-  e.target.parentElement.parentElement.parentElement.remove();
+  renderTasks(tasksArr);
 }
 
 function handleShow(e) {
