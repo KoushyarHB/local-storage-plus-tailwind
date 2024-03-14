@@ -3,6 +3,7 @@ renderTasks(tasksArr);
 let editFlag = 0;
 let showFlag = 0;
 let idOftaskBeingEdited;
+let idOftaskBeingDeleted;
 const addTaskBtn = document.getElementById("add-task");
 const overLay = document.querySelector(".overlay");
 addTaskBtn.addEventListener("click", addTask);
@@ -135,10 +136,34 @@ function renderTasks(arr) {
   });
 }
 
+const deleteOverlay = document.querySelector(".delete-overlay");
+const closeDeleteModal = document.getElementById("closeDeleteModal");
+const confirmationBtn = document.getElementById("confirmation");
+const rejectionBtn = document.getElementById("rejection");
+
+confirmationBtn.addEventListener("click", deleteConfirmed);
+rejectionBtn.addEventListener("click", hideDeleteModal);
+closeDeleteModal.addEventListener("click", hideDeleteModal);
+
+function hideDeleteModal() {
+  deleteOverlay.classList.add("hidden");
+}
+
+function showDeleteModal() {
+  deleteOverlay.classList.remove("hidden");
+}
+
 function handleDelete(e) {
-  const taskId = e.target.parentElement.parentElement.parentElement.id;
-  tasksArr = tasksArr.filter((task) => String(task.id) !== taskId);
+  idOftaskBeingDeleted = e.target.parentElement.parentElement.parentElement.id;
+  showDeleteModal();
+}
+
+function deleteConfirmed() {
+  tasksArr = tasksArr.filter((task) => {
+    return String(task.id) !== idOftaskBeingDeleted;
+  });
   renderTasks(tasksArr);
+  hideDeleteModal();
 }
 
 function handleShow(e) {
