@@ -6,6 +6,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="output.css" />
     <!-- <link rel="stylesheet" href="../styles.css" /> -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../assets/css/jalalidatepicker.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="../assets/js/jalalidatepicker.min.js"
+    ></script>
   </head>
   <body>
     <div class="min-h-screen">
@@ -109,7 +118,7 @@
                   </div>
                   <div class="flex justify-between py-2">
                     <label for="">Deadline:</label>
-                    <input type="date" name="date" />
+                    <input class="border" data-jdp name="date" required />
                   </div>
                   <div class="modal-btn text-center mt-4">
                     <button

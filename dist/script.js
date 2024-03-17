@@ -1,3 +1,6 @@
+jalaliDatepicker.startWatch();
+jalaliDatepicker.updateOptions({ persianDigits: true, time: true });
+
 let tasksArr = JSON.parse(localStorage.getItem("key")) || [];
 renderTasks(tasksArr);
 let editFlag = 0;
@@ -24,7 +27,7 @@ function showModal() {
 
 const closeModalBtn = document.getElementById("closeModal");
 closeModalBtn.addEventListener("click", hideModal);
-function hideModal(e) {
+function hideModal() {
   overLay.classList.add("hidden");
 }
 
@@ -198,3 +201,29 @@ function auxiliaty(e) {
 
   return Number(taskId);
 }
+
+// function toFarsiNumber(num) {
+//   const farsiDigits = {
+//     0: "۰",
+//     1: "۱",
+//     2: "۲",
+//     3: "۳",
+//     4: "۴",
+//     5: "۵",
+//     6: "۶",
+//     7: "۷",
+//     8: "۸",
+//     9: "۹",
+//   };
+//   return num
+//     .toString()
+//     .split("")
+//     .map((x) => {
+//       if (Object.keys(farsiDigits).includes(x)) {
+//         return farsiDigits[x];
+//       } else {
+//         return x;
+//       }
+//     })
+//     .join("");
+// }
